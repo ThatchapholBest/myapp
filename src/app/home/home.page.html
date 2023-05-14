@@ -12,9 +12,74 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div style="text-align: center;">
+    <ion-toolbar>
+      <ion-title>Introduce Yourself</ion-title>
+    </ion-toolbar>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="Name: " [clearInput]="true" placeholder="Enter name" [(ngModel)]="name" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Age: " type="number" [clearInput]="true"
+          placeholder="Enter age (years)" [(ngModel)]="age"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-radio-group>
+          <ion-item>
+            <ion-col>
+              <ion-radio value="Male">Male</ion-radio>
+            </ion-col>
+            <ion-col>
+              <ion-radio value="Female">Female</ion-radio>
+            </ion-col>  
+          </ion-item>
+        </ion-radio-group>
+      </ion-col>
+    </ion-row>  
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input label="What is your favorite color?" [clearInput]="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="What is your favorite foods?" [clearInput]="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label> Social Media</ion-label>
+        </ion-item-divider>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ion-item>
+          <ion-label> Line</ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled1" name="isInputEnabled1"></ion-checkbox>
+          <ion-input type="text" [disabled]="!isInputEnabled1" [clearInput]="true" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label> Facebook</ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled2" name="isInputEnabled2"></ion-checkbox>
+          <ion-input type="text" [disabled]="!isInputEnabled2" [clearInput]="true" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label> Instagram</ion-label>
+          <ion-checkbox [(ngModel)]="isInputEnabled3" name="isInputEnabled3"></ion-checkbox>
+          <ion-input type="text" [disabled]="!isInputEnabled3" [clearInput]="true" ></ion-input>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+
+  </ion-grid>
+  <div style = "text-align: center;">
+    <ion-button (click)="onSave()">Save</ion-button>
+    <ion-button (click)="navigatorToHome2()">BMI</ion-button>
   </div>
 </ion-content>
